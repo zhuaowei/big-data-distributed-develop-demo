@@ -12,6 +12,7 @@
         <module>work01</module>
         <module>wordcount</module>
         <module>work02</module>
+        <module>upAndDown</module>
     </modules>
 
     <properties>
