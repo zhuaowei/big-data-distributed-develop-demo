@@ -10,6 +10,7 @@
         <module name="flowStatistics" />
         <module name="flowStatisticsByObject" />
         <module name="wordcount" />
+        <module name="studentScore" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="8">
