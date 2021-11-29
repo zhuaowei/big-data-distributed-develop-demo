@@ -12,6 +12,8 @@
         <module>work01</module>
         <module>wordcount</module>
         <module>studentScore</module>
+        <module>flowStatistics</module>
+        <module>flowStatisticsByObject</module>
     </modules>
 
     <properties>

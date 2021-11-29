@@ -23,8 +23,7 @@
 hs_err_pid*
 
 # idea config
-/.idea
+.idea
 
 # map reduce output files
-/output
-*.crc
+output
