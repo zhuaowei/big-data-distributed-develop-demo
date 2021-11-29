@@ -14,6 +14,10 @@
         <module>studentScore</module>
         <module>flowStatistics</module>
         <module>flowStatisticsByObject</module>
+        <module>defineInputKeyValue</module>
+        <module>definePartition</module>
+        <module>studentTestCount</module>
+        <module>studentPartition</module>
     </modules>
 
     <properties>

@@ -7,10 +7,14 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="work01" />
+        <module name="wordcount" />
+        <module name="studentPartition" />
+        <module name="studentScore" />
         <module name="flowStatistics" />
         <module name="flowStatisticsByObject" />
-        <module name="wordcount" />
-        <module name="studentScore" />
+        <module name="defineInputKeyValue" />
+        <module name="studentTestCount" />
+        <module name="definePartition" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="8">

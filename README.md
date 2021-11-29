@@ -29,10 +29,14 @@
 - zy1_data.txt
     - wordcount 各单词出现次数统计
     - work01 文件每行第一个单词出现次数统计
+    - defineInputKeyValue 自定义输入map的key-value
     
 - phone_data.txt
     - flowStatistics 各号码上行流量、下行流量、总流量统计（不带类）
     - flowStatisticsWithObject 各号码上行流量、下行流量、总流量统计（带类实现）
+    - definePartition 定义分区
 
 - zy2_data.txt
     - studentScore 学生成绩统计
+    - studentTestCount 学生测试次数统计，自定义输入map的key-value
+    - studentPartition 分区统计每个学生各科的总成绩

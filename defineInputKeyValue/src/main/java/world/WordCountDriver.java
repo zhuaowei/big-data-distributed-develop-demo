@@ -1,4 +1,4 @@
-package com.count.world;
+package world;
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;
@@ -6,6 +6,8 @@ import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
+import org.apache.hadoop.mapreduce.lib.input.KeyValueLineRecordReader;
+import org.apache.hadoop.mapreduce.lib.input.KeyValueTextInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 
 import java.io.IOException;
@@ -23,6 +25,9 @@ public class WordCountDriver {
 
         Configuration conf = new Configuration();
 
+        // 设置读取 key-value 的分隔符，按每行第一次出现字符分隔，前面的作为key，后面的作为value。
+        conf.set(KeyValueLineRecordReader.KEY_VALUE_SEPERATOR, " ");
+
         // 获取一个job实例
         Job job = Job.getInstance(conf);
 
@@ -33,13 +38,17 @@ public class WordCountDriver {
         job.setMapperClass(WordCountMapper.class);
         job.setReducerClass(WordCountReducer.class);
 
-        // 设置 map 输入输出类型
+        // 设置 map 输出类型
         job.setMapOutputKeyClass(Text.class);
         job.setMapOutputValueClass(IntWritable.class);
 
-        // 设置 reduce 输入输出类型
+        // 设置 reduce 输出类型，即文件的输出类型
         job.setOutputKeyClass(Text.class);
         job.setOutputValueClass(IntWritable.class);
+
+        // 设置读取文件的格式。默认是 TextInputFormat.class，行号为key，整行为value
+        // KeyValueTextInputFormat.class 按键值对读取，在conf设置分隔符
+        job.setInputFormatClass(KeyValueTextInputFormat.class);
 
         // 设置参数，这里在idea本地运行需要在右上方edit configuration配置Program arguments 设置输入输出目录，用空格隔开，设置目录即可，不需要设置到文件
         FileInputFormat.setInputPaths(job, new Path(args[0]));
