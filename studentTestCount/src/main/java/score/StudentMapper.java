@@ -17,8 +17,9 @@ import java.io.IOException;
 public class StudentMapper extends Mapper<Text, Text, Text, IntWritable> {
     @Override
     protected void map(Text key, Text value, Context context) throws IOException, InterruptedException {
+        // 取出学号作为主键
         String id = value.toString().split("\t")[0];
-
+        // 1 作为value
         context.write(new Text(id), new IntWritable(1));
     }
 

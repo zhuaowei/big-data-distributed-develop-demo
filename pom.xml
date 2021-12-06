@@ -18,6 +18,8 @@
         <module>definePartition</module>
         <module>studentTestCount</module>
         <module>studentPartition</module>
+        <module>sortFlow</module>
+        <module>scoreCompare</module>
     </modules>
 
     <properties>

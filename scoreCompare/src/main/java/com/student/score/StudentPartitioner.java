@@ -1,4 +1,4 @@
-package score;
+package com.student.score;
 
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Partitioner;
@@ -11,14 +11,15 @@ import org.apache.hadoop.mapreduce.Partitioner;
  * @Version: 1.0
  */
 
-public class StudentPartitioner extends Partitioner<Text, Student> {
+public class StudentPartitioner extends Partitioner<Student, Text> {
     @Override
-    public int getPartition(Text text, Student student, int i) {
+    public int getPartition(Student student, Text text, int i) {
         String id = text.toString();
-        // 判断分区，默认为 0
+        // 默认是 0 分区，1003和1004在 1 分区
         if ("1003".equals(id) || "1004".equals(id)) {
             return 1;
         }
         return 0;
     }
 }
+

@@ -9,10 +9,12 @@
         <module name="work01" />
         <module name="wordcount" />
         <module name="studentPartition" />
+        <module name="scoreCompare" />
         <module name="studentScore" />
         <module name="flowStatistics" />
         <module name="flowStatisticsByObject" />
         <module name="defineInputKeyValue" />
+        <module name="sortFlow" />
         <module name="studentTestCount" />
         <module name="definePartition" />
       </profile>
